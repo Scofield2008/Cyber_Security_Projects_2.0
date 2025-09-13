@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Hero Section -->
+<div class="text-center mb-12 animate-slide-up">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Secure Your 
+            <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Cloud Infrastructure
+            </span>
+        </h2>
+        <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+            Comprehensive Cloud Security Posture Management across AWS, Azure, and GCP. 
+            Identify vulnerabilities, ensure compliance, and protect your digital assets.
+        </p>
+        <div class="flex items-center justify-center space-x-6 mb-8">
+            <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <span class="text-sm text-slate-600">Real-time scanning</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                <span class="text-sm text-slate-600">Multi-cloud support</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+                <span class="text-sm text-slate-600">Compliance ready</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cloud Provider Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 group">
+        <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span class="text-white font-bold text-lg">AWS</span>
+            </div>
+            <div>
+                <h3 class="font-semibold text-slate-900">Amazon Web Services</h3>
+                <p class="text-sm text-slate-500">Complete AWS security scanning</p>
+            </div>
+        </div>
+        <div class="space-y-2">
+            <div class="flex justify-between text-sm">
+                <span class="text-slate-600">Security checks</span>
+                <span class="font-medium">150+</span>
+            </div>
+            <div class="w-full bg-slate-200 rounded-full h-2">
+                <div class="bg-gradient-to-r from-orange-400 to-orange-600 h-2 rounded-full w-4/5"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 group">
+        <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span class="text-white font-bold text-lg">AZ</span>
+            </div>
+            <div>
+                <h3 class="font-semibold text-slate-900">Microsoft Azure</h3>
+                <p class="text-sm text-slate-500">Comprehensive Azure monitoring</p>
+            </div>
+        </div>
+        <div class="space-y-2">
+            <div class="flex justify-between text-sm">
+                <span class="text-slate-600">Security checks</span>
+                <span class="font-medium">120+</span>
+            </div>
+            <div class="w-full bg-slate-200 rounded-full h-2">
+                <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full w-3/4"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 group">
+        <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-r from-red-400 to-red-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span class="text-white font-bold text-lg">GCP</span>
+            </div>
+            <div>
+                <h3 class="font-semibold text-slate-900">Google Cloud Platform</h3>
+                <p class="text-sm text-slate-500">Advanced GCP security analysis</p>
+            </div>
+        </div>
+        <div class="space-y-2">
+            <div class="flex justify-between text-sm">
+                <span class="text-slate-600">Security checks</span>
+                <span class="font-medium">100+</span>
+            </div>
+            <div class="w-full bg-slate-200 rounded-full h-2">
+                <div class="bg-gradient-to-r from-red-400 to-red-600 h-2 rounded-full w-3/5"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Scan Form -->
+<div class="max-w-4xl mx-auto">
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-6">
+            <h3 class="text-2xl font-bold text-white mb-2">Initialize Cloud Security Scan</h3>
+            <p class="text-blue-100">Select your cloud provider and configure credentials for a comprehensive security assessment</p>
+        </div>
+
+        <form method="post" action="/scan" class="p-8 space-y-8">
+            <!-- Provider Selection -->
+            <div class="space-y-3">
+                <label class="block">
+                    <span class="text-lg font-semibold text-slate-900 flex items-center space-x-2">
+                        <span>🏗️</span>
+                        <span>Cloud Provider</span>
+                    </span>
+                    <select name="provider" class="mt-3 block w-full p-4 border-2 border-slate-200 rounded-xl bg-slate-50 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 focus:bg-white transition-all duration-200 text-lg font-medium">
+                        <option value="aws">🟠 Amazon Web Services (AWS)</option>
+                        <option value="azure">🔵 Microsoft Azure</option>
+                        <option value="gcp">🔴 Google Cloud Platform (GCP)</option>
+                    </select>
+                </label>
+            </div>
+
+            <!-- Credentials Section -->
+            <div class="space-y-6">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white text-sm">🔑</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900">Authentication Configuration</h3>
+                    <div class="flex-1 h-px bg-gradient-to-r from-slate-300 to-transparent"></div>
+                </div>
+                
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-white text-xs">⚠️</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-amber-800 mb-1">Security Notice</p>
+                            <p class="text-sm text-amber-700">Credentials are optional and only processed if you trust this environment. We recommend using environment variables or IAM roles in production.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- AWS Credentials -->
+                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl border-2 border-orange-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+                                <span class="text-white text-xs font-bold">AWS</span>
+                            </div>
+                            <h4 class="font-semibold text-slate-900">Amazon Web Services</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <input 
+                                name="aws_access_key" 
+                                placeholder="Access Key ID" 
+                                class="w-full p-3 border border-orange-300 rounded-lg bg-white/80 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/20 focus:bg-white transition-all duration-200"
+                                type="password"
+                            />
+                            <input 
+                                name="aws_secret_key" 
+                                placeholder="Secret Access Key" 
+                                class="w-full p-3 border border-orange-300 rounded-lg bg-white/80 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/20 focus:bg-white transition-all duration-200"
+                                type="password"
+                            />
+                            <input 
+                                name="aws_session_token" 
+                                placeholder="Session Token (optional)" 
+                                class="w-full p-3 border border-orange-300 rounded-lg bg-white/80 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/20 focus:bg-white transition-all duration-200"
+                                type="password"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Azure Credentials -->
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border-2 border-blue-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                                <span class="text-white text-xs font-bold">AZ</span>
+                            </div>
+                            <h4 class="font-semibold text-slate-900">Microsoft Azure</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <input 
+                                name="azure_tenant_id" 
+                                placeholder="Tenant ID" 
+                                class="w-full p-3 border border-blue-300 rounded-lg bg-white/80 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 focus:bg-white transition-all duration-200"
+                                type="password"
+                            />
+                            <input 
+                                name="azure_client_id" 
+                                placeholder="Client ID" 
+                                class="w-full p-3 border border-blue-300 rounded-lg bg-white/80 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 focus:bg-white transition-all duration-200"
+                                type="password"
+                            />
+                            <input 
+                                name="azure_client_secret" 
+                                placeholder="Client Secret" 
+                                class="w-full p-3 border border-blue-300 rounded-lg bg-white/80 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 focus:bg-white transition-all duration-200"
+                                type="password"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GCP Credentials -->
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl border-2 border-red-200">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white text-xs font-bold">GCP</span>
+                        </div>
+                        <h4 class="font-semibold text-slate-900">Google Cloud Platform</h4>
+                    </div>
+                    <input 
+                        name="gcp_key_path" 
+                        placeholder="Service Account JSON Path (server-side)" 
+                        class="w-full p-3 border border-red-300 rounded-lg bg-white/80 focus:border-red-500 focus:ring-4 focus:ring-red-500/20 focus:bg-white transition-all duration-200 mb-2"
+                    />
+                    <p class="text-xs text-red-600 bg-red-50 p-2 rounded border border-red-200">
+                        💡 If empty, the application will attempt to use GOOGLE_APPLICATION_CREDENTIALS environment variable or default service account credentials.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-slate-200">
+                <button 
+                    type="submit" 
+                    class="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:from-blue-700 hover:to-indigo-700 hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center space-x-3"
+                >
+                    <span>🚀</span>
+                    <span>Initialize Security Scan</span>
+                </button>
+                <a 
+                    href="/results" 
+                    class="flex-1 sm:flex-none px-8 py-4 rounded-xl border-2 border-slate-300 text-slate-700 font-semibold text-lg hover:border-slate-400 hover:bg-slate-50 transition-all duration-200 flex items-center justify-center space-x-3 group"
+                >
+                    <span class="group-hover:rotate-12 transition-transform duration-200">📊</span>
+                    <span>View Previous Results</span>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 group">
+        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white text-xl">⚡</span>
+        </div>
+        <h3 class="font-semibold text-slate-900 mb-2">Real-time Scanning</h3>
+        <p class="text-sm text-slate-600">Continuous monitoring and instant vulnerability detection across your cloud infrastructure.</p>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 group">
+        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white text-xl">📋</span>
+        </div>
+        <h3 class="font-semibold text-slate-900 mb-2">Compliance Ready</h3>
+        <p class="text-sm text-slate-600">Built-in compliance frameworks including SOC 2, GDPR, HIPAA, and industry standards.</p>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 group">
+        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white text-xl">📈</span>
+        </div>
+        <h3 class="font-semibold text-slate-900 mb-2">Advanced Analytics</h3>
+        <p class="text-sm text-slate-600">Comprehensive reporting with risk scoring, trend analysis, and actionable insights.</p>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 group">
+        <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white text-xl">🛡️</span>
+        </div>
+        <h3 class="font-semibold text-slate-900 mb-2">Multi-Cloud Support</h3>
+        <p class="text-sm text-slate-600">Unified security management across AWS, Azure, and Google Cloud Platform environments.</p>
+    </div>
+</div>
+{% endblock %}
